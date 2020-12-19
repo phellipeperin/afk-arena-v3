@@ -9,7 +9,7 @@ const routes = [
     { path: '/', name: 'auth', component: AuthPage },
     { path: '*', redirect: '/' },
 
-    { path: '/hero-list', name: 'heroList', meta: { requiresAuth: true } },
+    // { path: '/hero-list', name: 'heroList', meta: { requiresAuth: true } },
 ];
 
 const router = createRouter({
@@ -19,7 +19,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
     const { currentUser } = firebase.auth();
-    const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+    const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
 
     if (requiresAuth && !currentUser) {
         next('auth');

@@ -9,8 +9,8 @@ export default {
     },
     mutations: {
         // Request
-        openRequest(state: any) { state.request.active++; },
-        closeRequest(state: any) { state.request.active--; },
+        openRequest(state: any) { state.request.active += 1; },
+        closeRequest(state: any) { state.request.active -= 1; },
 
         // Feedback
         // setFeedbackMessage(state: any, payload: any) { state.feedbackMessage = payload; },
