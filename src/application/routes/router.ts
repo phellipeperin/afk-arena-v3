@@ -1,13 +1,13 @@
 import { createWebHistory, createRouter } from 'vue-router';
 import firebase from 'firebase';
 
-import store from '../store';
+import store from '../store/store';
 
 import AuthPage from '../../pages/AuthPage.vue';
 
 const routes = [
     { path: '/', name: 'auth', component: AuthPage },
-    { path: '*', redirect: '/' },
+    { path: '/:catchAll(.*)', redirect: '/' },
 
     // { path: '/hero-list', name: 'heroList', meta: { requiresAuth: true } },
 ];
