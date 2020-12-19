@@ -1,5 +1,7 @@
 <template>
-    auth
+    <div>
+        auth qualquer
+    </div>
 </template>
 
 <script lang="ts">

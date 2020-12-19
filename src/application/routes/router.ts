@@ -25,7 +25,7 @@ router.beforeEach((to, from, next) => {
         next('auth');
         store.commit('user/user', null);
     } else if (!requiresAuth && currentUser) {
-        next('hero');
+        next('heroList');
         store.commit('user/user', currentUser);
     } else {
         next();
