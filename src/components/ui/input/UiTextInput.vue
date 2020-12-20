@@ -3,9 +3,9 @@
         :value="value"
         :type="type"
         :placeholder="placeholder"
-        class="h-10 w-full m-1 text-lg shadow rounded-md border border-transparent
-            focus:outline-none focus:ring-2 focus:ring-accent focus:text-xl
-            transition-all duration-300 ease-in-out"
+        class="h-12 w-full m-1 text-lg shadow rounded-md border border-transparent
+            focus:outline-none focus:ring-2 focus:ring-accent
+            transition-all duration-400 ease-in-out"
         :class="`${extraClasses} ${center ? 'text-center' : ''}`"
         @input="handleChange"
     >

@@ -1,0 +1,55 @@
+<template>
+    <button
+        :class="`${classes}`"
+        @click="handleClick"
+    >
+        {{ text }}
+    </button>
+</template>
+
+<script lang="ts">
+export default {
+    name: 'UiButton',
+    props: {
+        text: { type: String, required: true },
+        variant: { type: String, default: 'filled', validator: (value: string) => ['filled', 'text'].indexOf(value) !== -1 },
+        size: { type: String, default: 'md', validator: (value: string) => ['sm', 'md', 'lg'].indexOf(value) !== -1 },
+        extraClasses: { type: String, default: '' },
+    },
+    computed: {
+        classes() {
+            const baseClasses = 'w-full m-1 rounded uppercase font-medium focus:outline-none';
+            const transitionClasses = 'transition-all duration-400 ease-in-out';
+            let sizeClasses = '';
+            let colorClasses = '';
+            let hoverClasses = '';
+
+            if (this.variant === 'filled') {
+                colorClasses = 'bg-accent text-white shadow';
+                hoverClasses = 'hover:bg-primary';
+            }
+            if (this.variant === 'text') {
+                colorClasses = 'bg-transparent text-accent';
+                hoverClasses = 'hover:text-primary';
+            }
+
+            if (this.size === 'sm') {
+                sizeClasses = 'h-8 text-sm';
+            }
+            if (this.size === 'md') {
+                sizeClasses = 'h-10 text-base';
+            }
+            if (this.size === 'lg') {
+                sizeClasses = 'h-12 text-lg';
+            }
+
+            return `${baseClasses} ${sizeClasses} ${colorClasses} ${hoverClasses} ${transitionClasses} ${this.extraClasses}`;
+        },
+    },
+    methods: {
+        handleClick() {
+            this.$emit('click');
+        },
+    },
+};
+</script>

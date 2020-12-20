@@ -5,7 +5,7 @@ export default {
         request: {
             active: 0,
         },
-        // feedbackMessage: {},
+        feedbackMessage: {},
     },
     mutations: {
         // Request
@@ -13,6 +13,6 @@ export default {
         closeRequest(state: any) { state.request.active -= 1; },
 
         // Feedback
-        // setFeedbackMessage(state: any, payload: any) { state.feedbackMessage = payload; },
+        setFeedbackMessage(state: any, payload: any) { state.feedbackMessage = payload; },
     },
 };

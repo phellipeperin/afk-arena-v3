@@ -1,7 +1,6 @@
-const primary = '#d24d57';
-const accent = '#4DD16C';
+const primary = '#2C5673';
+const accent = '#58CCBC';
 // 5c97bf
-// 85242C
 
 const themeColors = (theme) => ({
     ...theme('colors'),
@@ -16,12 +15,15 @@ module.exports = {
         borderColor: themeColors,
         ringColor: themeColors,
         fontFamily: {
-            sans: ['"Jura"'],
+            sans: ['"Quicksand"'],
+            serif: ['"Antic Slab"'],
         },
     },
     variants: {
         extend: {
-            fontSize: ['focus'],
+            width: ['hover'],
+            // fontSize: ['focus'],
+            // fontWeight: ['focus'],
         },
     },
 };

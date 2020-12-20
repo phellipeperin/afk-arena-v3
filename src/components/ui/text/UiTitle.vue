@@ -1,6 +1,6 @@
 <template>
     <p
-        class="text-4xl font-semibold"
+        class="text-4xl font-serif"
         :class="`${whiteColor ? 'text-white' : ''} ${extraClasses}`"
     >
         {{ text }}
