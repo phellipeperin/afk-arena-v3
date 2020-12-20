@@ -15,8 +15,10 @@
                 placeholder="Password"
             />
             <ui-button
+                disabled
                 size="lg"
                 text="Login"
+                @click="login"
             />
             <ui-button
                 size="sm"
@@ -48,6 +50,9 @@ export default {
         };
     },
     methods: {
+        login() {
+            this.showMessage('Account created successfully! :)', 'success');
+        },
         register() {
             firebase.auth().createUserWithEmailAndPassword(this.username, this.password).then(() => {
                 this.showMessage('Account created successfully! :)', 'success');

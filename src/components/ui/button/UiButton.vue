@@ -1,19 +1,26 @@
 <template>
     <button
+        :disabled="disabled"
         :class="`${classes}`"
         @click="handleClick"
     >
+        <ui-icon :path="require('../../../assets/icons/circle-notch.svg')" />
         {{ text }}
     </button>
 </template>
 
 <script lang="ts">
+import UiIcon from '../icon/UiIcon.vue';
+
 export default {
     name: 'UiButton',
+    components: { UiIcon },
     props: {
         text: { type: String, required: true },
         variant: { type: String, default: 'filled', validator: (value: string) => ['filled', 'text'].indexOf(value) !== -1 },
         size: { type: String, default: 'md', validator: (value: string) => ['sm', 'md', 'lg'].indexOf(value) !== -1 },
+        disabled: { type: Boolean, default: false },
+        loading: { type: Boolean, default: false },
         extraClasses: { type: String, default: '' },
     },
     computed: {
@@ -25,8 +32,12 @@ export default {
             let hoverClasses = '';
 
             if (this.variant === 'filled') {
-                colorClasses = 'bg-accent text-white shadow';
-                hoverClasses = 'hover:bg-primary';
+                if (this.disabled) {
+                    colorClasses = 'bg-disabled text-white shadow';
+                } else {
+                    colorClasses = 'bg-accent text-white shadow';
+                    hoverClasses = 'hover:bg-primary';
+                }
             }
             if (this.variant === 'text') {
                 colorClasses = 'bg-transparent text-accent';

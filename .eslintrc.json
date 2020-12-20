@@ -19,7 +19,7 @@
         "vue/script-indent": [2, 4],
         "import/extensions": 0,
         "max-len": [2, 150],
-        "func-names": 0,
+        "func-names": 0
     },
     "settings": {
         "import/resolver": {
