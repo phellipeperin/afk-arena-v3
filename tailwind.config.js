@@ -1,14 +1,27 @@
-const primary = '#3a539b';
+const primary = '#d24d57';
+const accent = '#4DD16C';
+// 5c97bf
+// 85242C
 
-const setThemeColors = (theme) => ({
+const themeColors = (theme) => ({
     ...theme('colors'),
     primary,
+    accent,
 });
 
 module.exports = {
     theme: {
-        textColor: setThemeColors,
-        backgroundColor: setThemeColors,
-        borderColor: setThemeColors,
+        textColor: themeColors,
+        backgroundColor: themeColors,
+        borderColor: themeColors,
+        ringColor: themeColors,
+        fontFamily: {
+            sans: ['"Jura"'],
+        },
+    },
+    variants: {
+        extend: {
+            fontSize: ['focus'],
+        },
     },
 };

@@ -7,10 +7,9 @@ import AuthPage from '../../pages/AuthPage.vue';
 
 const routes = [
     { path: '/', name: 'auth', component: AuthPage },
-    { path: '/:catchAll(.*)', redirect: '/' },
-
-    // { path: '/hero-list', name: 'heroList', meta: { requiresAuth: true } },
 ];
+// { path: '/:catchAll(.*)', redirect: '/' },
+// { path: '/hero-list', name: 'heroList', meta: { requiresAuth: true } },
 
 const router = createRouter({
     history: createWebHistory(),
